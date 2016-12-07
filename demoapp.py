@@ -8,12 +8,18 @@ api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        text = "Hello Universe!"
+        text = "Hello World!"
         return text
 
 api.add_resource(HelloWorld, '/hello/world')
 
+class HelloUniverse(Resource):
+    def get(self):
+        text = "Hello Universe!"
+        return text
+
+api.add_resource(HelloUniverse, '/hello/universe')
+
 if __name__ == '__main__':
-    # Runn Flask
+    # Run Flask
     app.run(debug=True, host='0.0.0.0', port=int("5000"))
-    # pass
